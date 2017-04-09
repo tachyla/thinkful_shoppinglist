@@ -5,10 +5,10 @@ const appState = {
 
 const testState = {
 	items: [
-		{ title: 'apples', done: true },
-		{ title: 'oranges', done: true },
-		{ title: 'milk', done: false },
-		{ title: 'bread', done: true }
+		{ title: 'apples', checked: true },
+		{ title: 'oranges', checked: true },
+		{ title: 'milk', checked: false },
+		{ title: 'bread', checked: true }
 	]
 };
 
@@ -16,7 +16,7 @@ const testState = {
 //state modification functions
 //function to add item
 function addItem(appState, item) {
-	appState.items.push(item);
+	appState.items.push(`{title:${item}, checked: false}`);
 };
 
 //function to check item, no jq - toggle boolean in appState
@@ -38,7 +38,7 @@ function addItem(appState, item) {
 
 //render functions
 function renderList(appState, item, element) {
-	console.log(item, 'test');
+	//console.log(item, 'test');
 	$('.shopping-list').html("");
 	let itemsHTML = appState.items.map(function(item) {
 		return `<li>
