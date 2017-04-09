@@ -22,8 +22,11 @@ function addItem(appState, item) {
 //function to check item, no jq - toggle boolean in appState
 // instead .shopping-item__checked 
 
-function checkItem(appState, item) {
-}
+// function checkItem(appState, item) {
+
+// 	if(appState) {
+// 		return;
+// };
 // }//function to remove item
 
 // function removeItem(appState, itemIndex) {
@@ -54,28 +57,33 @@ function renderList(appState, item, element) {
 };
 
 
-//event listeners, calll after 
+//event listeners
 $(document).ready(function (addEventListeners) {
 	
-	$('.shopping-list-add').on("click",function(event) {
+	$('.shopping-list-add').on("click", function(event) {
 		event.preventDefault();
     	let item = addItem(appState, $('.shopping-list-add-input').val());
     	renderList(appState, item, $('.shopping-list'));
 	});
 
 
-	$('.shopping-item-delete').on("click", function(event) {
-		//event.preventDefault();
-		//$(itemToRemove).html("");
-    	let itemToRemove = removeItem(appState, $('.shopping-list-remove-input').val());
-    	renderList(appState, $('.shopping-list'));
-	});
-	// $('.shopping-item-toggle').check(function(event) {
+
+	// $('.shopping-item-toggle').on("click", function(event) {
 	// 	event.preventDefault();
- //    	let item = $('.shopping-list-toggle-input').val();
- //    	addItem(appState, item);
+	// 	let item = checkItem(appState, $('.shopping-list-toggle-input').val());
+
+
+	// 	$('button').closest('shopping-item').addClass('shopping-item__checked');
+ //    	renderList(appState, item, $('.shopping-list'));
+	// });
+
+	// $('.shopping-item-delete').on("click", function(event) {
+	// 	//event.preventDefault();
+	// 	//$(itemToRemove).html("");
+ //    	let itemToRemove = removeItem(appState, $('.shopping-list-remove-input').val());
  //    	renderList(appState, $('.shopping-list'));
 	// });
+	
 
 
 //delete.  on click 
