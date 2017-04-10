@@ -16,9 +16,10 @@ const testState = {
 //state modification functions
 //function to add item
 function addItem(appState, item) {
-	appState.items.push(`{title:${item}, checked: false}`);
-};
+	//appState.items.push(item);
+	appState.items.push({ title: item, checked: false });
 
+};
 //function to check item, no jq - toggle boolean in appState
 // instead .shopping-item__checked 
 
@@ -42,7 +43,7 @@ function renderList(appState, item, element) {
 	$('.shopping-list').html("");
 	let itemsHTML = appState.items.map(function(item) {
 		return `<li>
-        			<span class="shopping-item">${item}</span>
+        			<span class="shopping-item">${item.title}</span>
         			<div class="shopping-item-controls">
           				<button class="shopping-item-toggle">
             				<span class="button-label">check</span>
@@ -93,10 +94,3 @@ $(document).ready(function (addEventListeners) {
 });
 
 console.log(appState);
-
-
-
-
-
-
-
